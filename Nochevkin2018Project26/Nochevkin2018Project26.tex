@@ -1,0 +1,47 @@
+\documentclass[12pt, a4paper]{article}
+
+%% Language and font encodings
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian, english]{babel}
+
+%% Sets page size and margins
+\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+%% Useful packages
+\usepackage{amsmath}
+\DeclareMathOperator*{\argmax}{argmax}
+\DeclareMathOperator*{\argmin}{argmin}
+\usepackage{graphicx}
+%\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+\begin{document}
+\selectlanguage{russian}
+\title{\textbf{Определение местоположения по сигналам акселерометра}}
+\author{\bf \em Zaynulina E. T., Kiseleva E. A., Protasov V. P., Fateev D. A.,\\
+ \bf \em Bozhedomov N., Tolkanev A. A., Nochevkin V., Ryabov A. }
+\date{}
+\maketitle
+
+
+\begin{abstract}
+	Данная статья посвящена использованию методов машинного обучения в задаче определения
+местоположения,траектории движения и создания на их основе карты по результатам работы устройств, не основанных на gps приборах. Задача является актуальной и имеет различные практические применения, в частности детектирование деятельности человека в отсутвии сигнала gps. Поставленная задача решается по сигналам датчика телефона – акселерометра,гироскопа,магнетометра и ... ,встроенных в мобильное устройство движущегося человека. Для этих целей решаются проблемы негативного влияния шумового загрязнения(не уверен в формулировке),коррекции ошибок на основе новых данных и ... .
+
+{\bf Новизна:} задача исследования ставится в терминах projection to the latent space.
+
+{\bf Ключевые слова:}  обработка сигналов; сенсоры; акселерометр; анализ данных; машинное обучение; фильтр Кальмана,магнетометр.
+\end{abstract}
+
+
+
+\setcounter{secnumdepth}{0}
+\section{Введение}
+
+
+
+\begin{thebibliography}{4}
+\end{thebibliography}
+
+\end{document}
