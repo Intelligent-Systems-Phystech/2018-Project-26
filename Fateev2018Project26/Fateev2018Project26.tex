@@ -1,42 +1,51 @@
-\documentclass[12pt, a4paper]{article}
-
-%% Language and font encodings
-\usepackage[T2A]{fontenc}
+\documentclass{article}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{mathtext}
+\usepackage[T1,T2A]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage[russian, english]{babel}
+\usepackage[english,bulgarian,ukranian,russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{tikz}
 
-%% Sets page size and margins
-\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
 
-%% Useful packages
-\usepackage{amsmath}
-\DeclareMathOperator*{\argmax}{argmax}
-\DeclareMathOperator*{\argmin}{argmin}
-\usepackage{graphicx}
-\usepackage[colorinlistoftodos]{todonotes}
-\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\title{Определение местоположения по сигналу акселерометра}
+
+
+\author{\bf \em Zaynulina E. T., Kiseleva E. A., Protasov V. P., Fateev D. A.,\\
+ \bf \em Bozhedomov N., Tolkanev A. A., Nochevkin V., Ryabov A. }
+
+\date{October 2018}
 
 \begin{document}
-\selectlanguage{russian}
-\title{\textbf{Определение местоположения по сигналам акселерометра}}
-\author{Фатеев~Д.\,А.}
-\date{}
+
 \maketitle
 
+\section{Introduction}
+Данная статья посвящена использованию методов машинного обучения в задаче определения
+местоположения по результатам прибора, который несет движущийся
+человек. Задача является актуальной и имеет множество практических применений, как,
+например, автоматическое включение/выключение энергозатратных сервисов при различном
+положении мобильного устройства. Поставленная задача решается по сигналам датчика телефона – акселерометра. Основной смысл работы – это способ
+выбора и предобработки признаков, позволяющий уменьшить влияние шума на результат
+классификации и анализировать активность в независимости от пространственной
+ориентации мобильного устройства. Результаты, полученные в ходе вычислительного эксперимента,
+подтверждают применимость предложенного подхода.
 
-\begin{abstract}
-	Данная статья посвящена методам отслеживания местоположения человека по сигналам акселерометра, гироскопа, манометра. Основной задачей исследования является увеличение точности позиционирования. В качестве базовой модели был выбран PDR (pedestrian dead reckoning). Новизна исследования заключается в постановке задачи в терминах Projection to Latent Spaces.
 
-\end{abstract}
-
-{\bf Ключевые слова:} Pedestrian dead reckoning, (Indoor) inertial positioning, Simultaneous Localization and Mapping, PLS
-
-\setcounter{secnumdepth}{0}
-\section{Введение}
+{\bf Новизна:} задача исследования ставится в терминах projection to the latent space (It is pretty much used that way in machine learning — you observe some data which is in the space that you can observe, and you want to map it to a latent space where similar data points are closer together.)
 
 
 
-\begin{thebibliography}{4}
-\end{thebibliography}
+{\bf Ключевые слова:} обработка сигналов; сенсоры; акселерометр; анализ данных; машинное
+обучение.
+\section{Abstract}
+Существуют много публикаций, которые посвящены задаче классификации вида физической
+активности человека и идентификации по походке.
+
+Задача определения местоположения произвольного телефона для любого пользователя
+является сложной по следующим причинам: манера движения, в частности походка,
+у людей сильно различается; характеристики одежды, карманов и сумок варьируются
+в широких пределах, ориентация телефона в пространстве может быть произвольной.
+Датчики мобильных устройств имеют значительный разброс параметров
 
 \end{document}
