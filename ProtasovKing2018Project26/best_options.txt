@@ -1,0 +1,29 @@
+bag chn 0: C = 1, gamma = 0.01
+		C = 10, gamma = 0.001
+		C = 1, gamma = 0.01
+bag chn 1: C = 1, gamma = 0.01
+		C = 1, gamma = 0.0001
+		C = 1, gamma = 0.01
+body chn 0: C=1, gamma = 0.001
+		C = 1, gamma = 0.0001
+		C = 1, gamma = 0.0001
+body chn 1: C=1, gamma = 0.01
+		C = 1, gamma = 0.01
+		C = 1, gamma = 0.0001
+handheld chn 0 : C = 1, gamma = 0.01
+		C = 10, gamma = 0.01
+		C = 10, gamma = 0.01
+handheld chn 1 : C = 1, gamma = 0.01
+		C = 10, gamma = 0.01
+		C = 10, gamma = 0.01
+leg chn 0 : C = 10, gamma = 0.0001
+		C = 1, gamma = 0.0001
+		C = 1, gamma = 0.0001
+leg chn 1 : C = 10, gamma = 0.0001
+		C = 1, gamma = 0.0001
+		C = 1, gamma = 0.0001
+
+leg : C = 1, gamma = 0.001
+hand : C = 10, gamma =0.01
+body : C = 1, gamma = 0.001
+bag : C = 1, gamma = 0.01
