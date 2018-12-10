@@ -1,0 +1,71 @@
+\documentclass[12pt,twoside]{article}
+\usepackage{jmlda}
+%\NOREVIEWERNOTES
+\title
+    [Определение местоположения по сигналам акселерометра] % Краткое название; не нужно, если полное название влезает в~колонтитул
+    {Определение местоположения по сигналам акселерометра}
+\author
+    [8 студентов МФТИ] % список авторов для колонтитула; не нужен, если основной список влезает в колонтитул
+    {Божедомов~Н.\,И., 
+Зайнулина~Э.\,Т.,
+Киселёва~Е.\,А.,
+Ночевкин~В.\,В.,
+Протасов~В.\,П.,
+Рябов~А.,
+Толканев~А.\,А.,
+Фатеев~Д.\,А.\newline} % основной список авторов, выводимый в оглавление
+\thanks
+    {Задачу поставили:  Гарцеев~И.,\,Стрижов~В.\,В.
+    Консультант:  Мотренко~А.\,П.}
+\email
+    {nikita.bozhedomov@gmail.com,
+zaynulina.et@phystech.edu,
+kiseleva.ea@phystech.edu,
+nochevkin@phystech.edu,
+izakladno@yandex.ru,
+ryabov.alexandr@phystech.edu,
+artem.tolkanev@phystech.edu,
+fateev.da@phystech.edu\newline}
+\organization
+    {МФТИ(ГУ)}
+\abstract
+    {В работе предложен метод восстановления траектории движения тела и определения текущего местоположения на основе данных движения тела и датчиков, таких как акселерометр, гироскоп и магнитометр, а так же начального положения тела.  Метод расширяет и обобщает предыдущие решения по определению траекторий движения тела по данным акселерометра, используя PLS regression анализ и дополнительные источники данных, полученные с датчиков, перечисленных выше.
+
+\bigskip
+\textbf{Ключевые слова}: \emph {Инерциальная навигация, акселеромет, PLS regression}.}
+
+\begin{document}
+\maketitle
+%\linenumbers
+\section{Введение}
+Решается задача определения положения расположения тела без использования GPS. Работа актуальна, так как существуют ситуации, когда связь с внешним миром по каким-либо причинам может отсутствовать, есть необходимость определения траектории и положения тела на основе инерциальных датчиков. Так же позиционирование по GPS не всегда является точным. По похожей теме, например определение активности человека уже есть работы \b{[1]}. \\<--------------- не сделал ----------------->
+
+\section{Описание}
+В работе введены векторы состояния динамической системы исследуемого тела, один из которых получен по данным датчиков (вектор $\vec X_t$, $t - $ момент времени описания системы), а второй получен из предыдущего посредством использования фильтра Калмана (вектор $\vec Y_t = K(\vec X_t,\vec X_{t-1})$). На основе подпространства состояний системы (используются только данные акселерометра) получена кусочно-гладкая функция описывающая траекторию движения тела $\vec F(\vec Y_{accelerometer})$. Результат работы представлен оператором $L(\vec F, Y_{gyroscope, magnetometer})$ над $\vec F(\vec Y_{accelerometer})$, корректирующим траекторию движения тела, используя данные гироскопа и магнитометра. Прогноз получен методом PLS regression. \\<------------------ не сделал ------------------>
+
+
+
+\section{Ссылки}
+$[1]$ $Deep\ Learning\ for\ Sensor-based\ Activity\ Recognition:\ A\ Survey.\ $\\
+https://arxiv.org/pdf/1707.03502.pdf\\
+\\$[2]$ $LSTMs\ for\ Human\ Activity\ Recognition$ \\ https://github.com/guillaume-chevalier/LSTM-Human-Activity-Recognition\\
+\\$[3]$ $ $SmartPDR:\ Smartphone-Based\ Pedestrian\ Dead\
+Reckoning\ for\ Indoor\ Localization$\\https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6987239&tag=1
+
+
+\section{Датасеты}
+$[1]$ $A\ public\ domain\ dataset\ for\ human\ activity\ recognition\ using\ smartphones$ \\https://upcommons.upc.edu/handle/2117/20897\\
+\\$[2]$ Свой датасет от квадракоптера с GPS, магнитометром, акселерометром, гироскопом, магнитометром, камерой, блекджеком \\<------------------ in process... ---------------->
+
+\section{Чтобы было}
+$[1]$ Partial least squares regression
+and projection on latent structure
+regression (PLS Regression)\\https://www.utdallas.edu/~herve/abdi-wireCS-PLS2010.pdf\\
+\\$[2]$ Partial Least Squares (PLS) methods for neuroimaging: A tutorial and review \\https://www.utdallas.edu/~herve/abdi-kwmaPLS4NeuroImage2010.pdf\\
+\\$[3]$ LSTMs for Human Activity Recognition\\https://github.com/guillaume-chevalier/LSTM-Human-Activity-Recognition\\
+\section{Датчики для квадракоптера}
+- акселерометр $GY-61\ XC4478\ ADXL335$\\
+- $VC0706\ UART\ Camera$ с сенсором $MT9V011$ на схеме $IM130517001_VC070$\\
+- барометр $BMP180$\\
+- кардридер $MH-SD\ Card\ Module\ MOD-1142$ 
+\end{document}
